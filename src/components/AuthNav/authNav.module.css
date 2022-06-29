@@ -1,0 +1,18 @@
+.list {
+    list-style: none;
+    display: flex;
+}
+.item:not(:last-child){
+    margin-right: 20px;
+}
+.navLink {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+
+.navLinkActive {
+    text-decoration: none;
+    color: rgb(3, 0, 187);
+    font-size: 20px;
+}
