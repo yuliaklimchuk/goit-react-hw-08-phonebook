@@ -1,10 +1,10 @@
 const getIsLogIn = state => state.auth.isLogIn;
 
-const getUserEmail = state => state.auth.email;
+const getUserName = state => state.auth.user.name;
 
 const authSelectors = {
     getIsLogIn,
-    getUserEmail
+    getUserName
 }
 
 export default authSelectors;

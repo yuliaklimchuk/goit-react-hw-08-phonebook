@@ -4,10 +4,10 @@ import authSelectors from '../../redux/auth/authSelectors';
 import authOperations from '../../redux/auth/authOperations';
 
 const UserMenu = () => { 
-  const userEmail = useSelector(authSelectors.getUserEmail);
+  const userName = useSelector(authSelectors.getUserName);
   const dispatch = useDispatch();
   return <div className={style.profile}>
-    <p className={style.text}>Welcome, { userEmail}</p>
+    <p className={style.text}>Welcome, { userName}</p>
 
     <button
       type="button"
