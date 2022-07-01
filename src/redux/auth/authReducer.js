@@ -4,7 +4,8 @@ import authOperations from "./authOperations";
 const initialState = {
     user: { name: null, email: null },
     token: null,
-    isLogIn: false
+    isLogIn: false,
+    isRefreshing: false
 }
 
 const authSlice = createSlice({
@@ -26,9 +27,16 @@ const authSlice = createSlice({
             state.token = null;
             state.isLogIn = false;
         },
+        [authOperations.refreshCurrentUser.pending](state) {
+            state.isRefreshing = true;
+        },
         [authOperations.refreshCurrentUser.fulfilled](state, action) { 
             state.user = action.payload;
             state.isLogIn = true;
+            state.isRefreshing = false;
+        },
+        [authOperations.refreshCurrentUser.rejected](state) { 
+            state.isRefreshing = false;
         }
     }
 });
