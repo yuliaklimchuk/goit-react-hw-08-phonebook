@@ -21,7 +21,11 @@ export function App() {
   return (!isRefreshing && <div className={style.container}>
     <AppBar />
     <Routes>
-      <Route path='/' element={<Home />}></Route>
+      <Route path='/' element={
+        <PublicRoute >
+          <Home/>
+        </PublicRoute>
+      }></Route>
       <Route path='/register' element={
         <PublicRoute restricted>
           <Register />
